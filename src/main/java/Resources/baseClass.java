@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Properties;
 
@@ -66,9 +68,9 @@ public class baseClass {
 
 	// To take the screenshot and store in one folder-
 	public static String screenShot(WebDriver driver, String filename) {
-		String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		//String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		// 20241107080800
-
+		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String destination = System.getProperty("user.dir") + "\\Screenshots\\" + filename + "_" + date + ".png";
 		try { // VerifyRresgiertaionWithValiData_20241107080800.png

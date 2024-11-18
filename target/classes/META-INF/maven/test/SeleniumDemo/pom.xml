@@ -41,7 +41,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.10.2</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
@@ -74,9 +74,15 @@
 					<version>3.13.0</version>
 				</plugin>
 				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.3.0</version>
-				</plugin>
+				       <groupId>org.apache.maven.plugins</groupId>
+				       <artifactId>maven-surefire-plugin</artifactId>
+				       <version>3.5.2</version>
+				       <configuration>
+				          <suitXmlfiles>
+				              <suiteXmlFile>testing.xml</suiteXmlFile>
+				          </suitXmlfiles>
+				       </configuration>
+				</plugin>  
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.4.2</version>

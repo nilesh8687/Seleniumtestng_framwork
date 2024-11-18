@@ -5,6 +5,7 @@
     <listener class-name="Resources.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="TestCases.LoginTestCases">
         <methods>
@@ -15,16 +16,6 @@
           <include name="browserClose"/>
         </methods>
       </class> <!-- TestCases.LoginTestCases -->
-      <class name="TestCases.registerTestCases">
-        <methods>
-          <include name="ExtentReport"/>
-          <include name="verifyregisterationwithinvaliddata"/>
-          <include name="verifyRegsiterationWithValidData"/>
-          <include name="endReport"/>
-          <include name="browserlaunch"/>
-          <include name="browserClose"/>
-        </methods>
-      </class> <!-- TestCases.registerTestCases -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

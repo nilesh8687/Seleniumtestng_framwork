@@ -2,19 +2,20 @@ package TestCases;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.Arrays;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import Resources.baseClass;
 
-public class AddToCartTestCase extends baseClass  {
+public class AddToCartTestCase   {
 	
 	@Test
 	public void VerifyProductPriceBeforeAndAfter() throws IOException, InterruptedException {
-		initializeDriver();
+		WebDriver driver= new ChromeDriver();
 
 		driver.get("https://naveenautomationlabs.com/opencart/");
 		
